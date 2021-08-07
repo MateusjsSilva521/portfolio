@@ -1,0 +1,152 @@
+@charset "UTF-8";
+
+/*fontes muli baloo josefin*/
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700&family=Josefin+Slab:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;1,100;1,200;1,300;1,400;1,700&family=Mulish:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400;1,500&display=swap');
+
+/*Merriweathe*/
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,900;1,300;1,400&display=swap');
+
+/*icones*/
+@import url('https://lib.arvancloud.com/ar/font-awesome/5.9.0/css/all.min.css');
+
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+/*tabela de cores*/
+:root{
+    --cor5: #C5D3D9;
+    --cor4: #BFAC9B;
+    --cor3: #A6896F;
+    --cor2: #733924;
+    --cor1: #2D3B40;
+}
+
+header{
+    position: relative;
+    width: 100%;
+    height:100vh; /*altura da viewport*/
+    overflow: hidden;/*limita ao tamanho da view evita barra de rolagem horizontal*/
+}
+
+.img-header{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: var(--cor2) ;
+}
+
+.img-header img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;/*especifica como vai se comportar dentro no elemento pai*/
+    opacity: 0.7;
+    animation: zoom 15s;
+}
+
+@keyframes zoom{
+    0%{
+        transform: scale(1.3);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.banner{
+    position: absolute;
+    top: 30%;
+    left: 10%;
+}
+
+.banner h1{
+    color: white;
+    font-size: 3.5rem;
+    font-family:'Merriweathe', serif;
+    font-weight: 900;
+    text-shadow:  3px 3px 5px rgba(0, 0, 0, 0.445);
+    line-height: 3.5rem;
+    margin-bottom: .8rem;
+    animation: upBanner 1s ;
+}
+
+.banner p{
+    color: white;
+    font-family: 'Josefin Slab', sans-serif;
+    font-weight: 500;
+    font-size: 2rem;
+    text-shadow:  3px 3px 5px rgba(0, 0, 0, 0.445);
+    line-height: 3rem;
+    margin-bottom: 3rem;
+    animation: upBanner 1.5s ;
+}
+
+.banner button{
+    background: #E0EAFC; 
+    background: -webkit-linear-gradient(to right, #CFDEF3, #E0EAFC); 
+    background: linear-gradient(to right, #CFDEF3, #E0EAFC);
+    font-family: 'Merriweathe', serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    line-height: 3rem;
+    padding: 0.2rem 1rem;
+    border-radius: 3px;
+    cursor: pointer;
+    border: none;
+    opacity: 0.8;
+    animation: upBanner 2s ;
+}
+
+.banner button:hover{
+    opacity: 1;
+    color: white;
+    background: #73392481;
+}
+
+@keyframes upBanner{
+    0%{
+        transform: translateY(15rem);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+.links{
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    background: #E0EAFC; 
+    background: -webkit-linear-gradient(to right, #CFDEF3, #E0EAFC); 
+    background: linear-gradient(to right, #CFDEF3, #E0EAFC);
+    padding: 5px;
+    border-radius: 5px;
+    opacity: 0.7;
+    animation: redeSocial 2s ;
+}
+
+.links img{
+    width: 30px;
+    height:30px;
+    padding: 10px 5px;
+}
+
+.links:hover{
+    opacity: 1;
+}
+
+@keyframes redeSocial{
+    0%{
+        transform: translateX(-8rem);
+    }
+    100%{
+        transform: translateX(1);
+    }
+}
