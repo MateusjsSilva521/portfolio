@@ -12,6 +12,8 @@
 *{
     margin: 0%;
     padding: 0%;
+    list-style: none;
+    text-decoration: none;
 }
 
 /*tabela de cores*/
@@ -21,8 +23,85 @@
     --cor3: #A6896F;
     --cor2: #733924;
     --cor1: #2D3B40;
+    --branco: white;
+
+    --fonte1: 'Merriweathe', serif;
+    --fonte2: 'Josefin Slab', sans-serif;
+    --fonteaction: 'Mulish';
+
+}
+.hamburguer{
+    position: fixed;
+    right: 2rem;
+    top: 2rem;
+    z-index: 100;/*trazer para frente*/
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    cursor: pointer;
+    transition: all 1s;
 }
 
+.show .hamburguer{
+    right: 16rem;
+}
+
+.line{
+    width: 100%;
+    background-color: white;
+    height: .2rem;
+    box-shadow: 0.1rem 0.1rem 1px rgba(0, 0, 0, 0.589);
+    transition: transform 1s;
+}
+
+.show #line1{
+    transform: rotate(45deg) translate(.3rem , .456rem);
+    background-color: var(--cor1);
+    box-shadow: none;
+}
+
+.show #line2{
+    opacity: 0;
+    visibility: hidden;
+}
+
+.show #line3{
+    transform: rotate(-45deg) translate(.3rem , -.456rem);
+    background-color: var(--cor1);
+    box-shadow: none;
+}
+
+.hamburguer span{
+    background-color: var(--cor1);
+    color: white;
+    width: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 3rem;
+    height: rem;
+    position: absolute;
+    padding: 10px;
+    font-family: var(--fonteaction);
+    opacity: 0;
+ 
+}
+
+.hamburguer span::before{
+    content: "";
+    position: absolute;
+    border-left: .5rem solid transparent;
+    border-right: .5rem solid var(--cor1);
+    border-bottom: .5rem solid transparent;
+    border-top: .5rem solid transparent;
+    left: -1rem;
+}
+
+.show .hamburguer:hover span{
+    opacity: 0.7;
+}
 header{
     position: relative;
     width: 100%;
@@ -66,7 +145,7 @@ header{
 .banner h1{
     color: white;
     font-size: 3.5rem;
-    font-family:'Merriweathe', serif;
+    font-family:var(--fonte1);
     font-weight: 900;
     text-shadow:  3px 3px 5px rgba(0, 0, 0, 0.445);
     line-height: 3.5rem;
@@ -76,7 +155,7 @@ header{
 
 .banner p{
     color: white;
-    font-family: 'Josefin Slab', sans-serif;
+    font-family: var(--fonte2) ;
     font-weight: 500;
     font-size: 2rem;
     text-shadow:  3px 3px 5px rgba(0, 0, 0, 0.445);
@@ -89,7 +168,7 @@ header{
     background: #E0EAFC; 
     background: -webkit-linear-gradient(to right, #CFDEF3, #E0EAFC); 
     background: linear-gradient(to right, #CFDEF3, #E0EAFC);
-    font-family: 'Merriweathe', serif;
+    font-family: var(--fonte1);
     font-weight: 400;
     font-size: 1.2rem;
     letter-spacing: .1rem;
@@ -149,4 +228,68 @@ header{
     100%{
         transform: translateX(1);
     }
+}
+
+.sidebar{
+    position: fixed;
+    top: 0%;
+    right: -20rem;
+    width: 20rem;
+    height: 100vh;
+    background-color:var(--cor5);
+    opacity: 0.9;
+    transition: all 1s;
+}
+
+.show .sidebar{
+    right: 0%;
+}
+
+.menu{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.menu-item{
+    text-align: center;
+}
+
+.menu-link{
+    font-family: var(--fonteaction);
+    color:var(--cor1);
+    font-size: 2rem;
+    margin-bottom: 1.3rem;
+    transition: color 0.3s;
+}
+
+.menu-link:hover{
+    text-decoration:underline ;
+    color: var(--branco);
+}
+
+.social{
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.social a {
+    color: var(--cor1);
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    transition: color 0.3s;
+}
+
+.social a:hover{
+    color: var(--branco);
+
 }
